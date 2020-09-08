@@ -294,7 +294,7 @@ static void tree_write_leave_buckets(distribution_t *dist, bucket_t *write_ptr,
   tree_write_leave_buckets(dist, write_ptr, right_child, mid + 1, right);
 }
 
-buckets_array_t get_buckets(distribution_t *dist) {
+buckets_array_t distribution_get_buckets(distribution_t *dist) {
   buckets_array_t bucket_array = {
       .num_buckets = dist == NULL ? 0 : dist->num_buckets,
       .buckets = dist == NULL
@@ -310,7 +310,7 @@ buckets_array_t get_buckets(distribution_t *dist) {
   return bucket_array;
 }
 
-void destroy_buckets_array(buckets_array_t buckets_array) {
+void distribution_destroy_buckets_array(buckets_array_t buckets_array) {
   free(buckets_array.buckets);
 }
 
