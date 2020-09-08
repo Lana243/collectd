@@ -323,7 +323,7 @@ double distribution_total_sum(distribution_t *dist) {
 
 uint64_t distribution_total_counter(distribution_t *dist) {
   if (dist == NULL) {
-    return EINVAL;
+    return 0;
   }
   return dist->tree[0].bucket_counter; // should I add mutex here?
 }
